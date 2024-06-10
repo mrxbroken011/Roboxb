@@ -12,7 +12,7 @@ async def chat_gpt(bot, message):
         await bot.send_chat_action(message.chat.id, ChatAction.TYPING)
         if len(message.command) < 2:
             await message.reply_text(
-            "Example:**\n\n`/chatgpt Where is TajMahal?`")
+            "ʜᴇʟʟᴏ sɪʀ/ᴍᴀᴅᴀᴍ\nExample:**\n\n` Broken Where is TajMahal?`")
         else:
             a = message.text.split(' ', 1)[1]
             r=api.gemini(a)["results"]

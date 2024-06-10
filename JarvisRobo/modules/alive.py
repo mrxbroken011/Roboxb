@@ -62,7 +62,7 @@ async def send_alive_message(client, message: Message):
 
 » **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{pyver()}`
 ━━━━━━━━━━━━━━━━━━━""",
-        reply_markup=InlineKeyboardMarkup(Jarvis),
+        reply_markup=InlineKeyboardMarkup(Owner),
     )
 
     # Delete the downloaded video file

@@ -15,7 +15,7 @@ VIDEO_URL = "https://telegra.ph/file/a80214e1fa190281c6c73.mp4"
 # Inline keyboard markup
 Jarvis = [
     [
-        InlineKeyboardButton(text="ᴊᴀʀᴠɪs", user_id=OWNER_ID),
+        InlineKeyboardButton(text="🖤ᴏᴡɴᴇʀ😈", user_id=OWNER_ID),
         InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/broknxsupport"),
     ],
     [
@@ -52,7 +52,7 @@ async def send_alive_message(client, message: Message):
         video=video_file_path,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
 ━━━━━━━━━━━━━━━━━━━
-» **ᴍʏ ᴏᴡɴᴇʀ :** [ᴏᴡɴᴇʀ](https://t.me/aboutbrokenx)
+» **ᴍʏ ᴏᴡɴᴇʀ :** [ᴍʀ ʙʀᴏᴋᴇɴ](https://t.me/aboutbrokenx)
 
 » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
 
@@ -62,7 +62,7 @@ async def send_alive_message(client, message: Message):
 
 » **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{pyver()}`
 ━━━━━━━━━━━━━━━━━━━""",
-        reply_markup=InlineKeyboardMarkup(Owner),
+        reply_markup=InlineKeyboardMarkup(Jarvis),
     )
 
     # Delete the downloaded video file

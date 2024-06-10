@@ -10,13 +10,13 @@ from telethon import __version__ as tver
 from JarvisRobo import SUPPORT_CHAT, pbot, BOT_USERNAME, OWNER_ID, BOT_NAME, START_IMG
 
 # Video URL
-VIDEO_URL = "https://graph.org/file/c3b6db252f9b089a7d14a.mp4"
+VIDEO_URL = "https://telegra.ph/file/a80214e1fa190281c6c73.mp4"
 
 # Inline keyboard markup
 Jarvis = [
     [
         InlineKeyboardButton(text="ᴊᴀʀᴠɪs", user_id=OWNER_ID),
-        InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/JARVIS_V_SUPPORT"),
+        InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/broknxsupport"),
     ],
     [
         InlineKeyboardButton(
@@ -38,11 +38,11 @@ async def send_alive_message(client, message: Message):
     await message.delete()
     accha = await message.reply("📲")
     await asyncio.sleep(0.2)
-    await accha.edit("Jᴀʀᴠɪs ᴄᴀᴄʜɪɴɢ ᴅᴀᴛᴀ..")
+    await accha.edit("ʙʀᴏᴋᴇɴ ɪs ᴄᴀᴄʜɪɴɢ ᴅᴀᴛᴀ..")
     await asyncio.sleep(0.1)
     await accha.edit("ᴄᴏʀᴇ ᴀɴᴀʟʏsᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ...")
     await asyncio.sleep(0.1)
-    await accha.edit("ᴊᴀʀᴠɪs 🔮 ᴀʟɪᴠɪɴɢ..")
+    await accha.edit("😈ᴛɪɢᴇʀ ᴢɪɴᴅᴀ ʜᴀɪ..")
     await accha.delete()
     await asyncio.sleep(0.3)
     umm = await message.reply_sticker("CAACAgEAAx0Cfbdm0QACATVmC-2FuLpqFS0KfIHldXuM8eTtjwACsQQAAsW0uURrdxdu_gmoNh4E")
@@ -52,7 +52,7 @@ async def send_alive_message(client, message: Message):
         video=video_file_path,
         caption=f"""**ʜᴇʏ, ɪ ᴀᴍ 『[{BOT_NAME}](f"t.me/{BOT_USERNAME}")』**
 ━━━━━━━━━━━━━━━━━━━
-» **ᴍʏ ᴏᴡɴᴇʀ :** [ᴏᴡɴᴇʀ](https://t.me/JARVIS_V2)
+» **ᴍʏ ᴏᴡɴᴇʀ :** [ᴏᴡɴᴇʀ](https://t.me/aboutbrokenx)
 
 » **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{lver}`
 

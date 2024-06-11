@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.errors import FloodWait
 
-from Robo-xb import app
+from Roboxb import app
 from JarvisRobo.misc import SUDOERS
 from JarvisRobo.utils.database import (
     get_active_chats,

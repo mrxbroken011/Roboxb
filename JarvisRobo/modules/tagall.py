@@ -58,7 +58,7 @@ async def mention_all(event):
 
     spam_chats.remove(chat_id)
 
-@client.on(events.NewMessage(pattern=r"^/cancel$"))
+@client.on(events.NewMessage(pattern=r"^(/cancel|/off) ?(.*)"))
 async def cancel_spam(event):
     if event.chat_id not in spam_chats:
         return await event.respond("There is no process going on.")

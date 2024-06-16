@@ -4,8 +4,8 @@ import sys
 from contextlib import suppress
 from time import sleep
 
-from telegram import TelegramError, Update
-from telegram.error import Unauthorized
+from telegram import Update
+from telegram.error import TelegramError, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler
 
 import JarvisRobo
@@ -20,9 +20,9 @@ def allow_groups(update: Update, context: CallbackContext):
         update.effective_message.reply_text(f"Current state: {JarvisRobo.ALLOW_CHATS}")
         return
     if args[0].lower() in ["off", "no"]:
-        JarvisRobo.ALLOW_CHATS = True
-    elif args[0].lower() in ["yes", "on"]:
         JarvisRobo.ALLOW_CHATS = False
+    elif args[0].lower() in ["yes", "on"]:
+        JarvisRobo.ALLOW_CHATS = True
     else:
         update.effective_message.reply_text("Format: /lockdown Yes/No or Off/On")
         return
@@ -37,13 +37,9 @@ def leave(update: Update, context: CallbackContext):
         chat_id = str(args[0])
         try:
             bot.leave_chat(int(chat_id))
+            update.effective_message.reply_text("Beep boop, I left that soup!")
         except TelegramError:
-            update.effective_message.reply_text(
-                "Beep boop, I could not leave that group(dunno why tho)."
-            )
-            return
-        with suppress(Unauthorized):
-            update.effective_message.reply_text("Beep boop, I left that soup!.")
+            update.effective_message.reply_text("Beep boop, I could not leave that group (dunno why tho).")
     else:
         update.effective_message.reply_text("Send a valid chat ID")
 
@@ -53,9 +49,10 @@ def gitpull(update: Update, context: CallbackContext):
     sent_msg = update.effective_message.reply_text(
         "Pulling all changes from remote and then attempting to restart."
     )
-    subprocess.Popen("git pull", stdout=subprocess.PIPE, shell=True)
+    process = subprocess.Popen("git pull", stdout=subprocess.PIPE, shell=True)
+    process.communicate()
 
-    sent_msg_text = sent_msg.text + "\n\nChanges pulled...I guess.. Restarting in "
+    sent_msg_text = sent_msg.text + "\n\nChanges pulled... I guess... Restarting in "
 
     for i in reversed(range(5)):
         sent_msg.edit_text(sent_msg_text + str(i + 1))
@@ -64,7 +61,6 @@ def gitpull(update: Update, context: CallbackContext):
     sent_msg.edit_text("Restarted.")
 
     os.system("restart.bat")
-    os.execv("start.bat", sys.argv)
 
 
 @dev_plus
@@ -74,7 +70,6 @@ def restart(update: Update, context: CallbackContext):
     )
 
     os.system("restart.bat")
-    os.execv("start.bat", sys.argv)
 
 
 LEAVE_HANDLER = CommandHandler("leave", leave, run_async=True)
@@ -86,7 +81,5 @@ dispatcher.add_handler(ALLOWGROUPS_HANDLER)
 dispatcher.add_handler(LEAVE_HANDLER)
 dispatcher.add_handler(GITPULL_HANDLER)
 dispatcher.add_handler(RESTART_HANDLER)
-
-
 
 __handlers__ = [LEAVE_HANDLER, GITPULL_HANDLER, RESTART_HANDLER, ALLOWGROUPS_HANDLER]

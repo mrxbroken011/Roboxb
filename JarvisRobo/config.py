@@ -11,8 +11,8 @@ class Config(object):
     
     SUPPORT_CHAT = "Broknxsupport"  # Your own group for support, do not add the @
     START_IMG = "https://telegra.ph/file/a80214e1fa190281c6c73.mp4"
-    EVENT_LOGS = ()  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
-    MONGO_DB_URI= "mongodb+srv://asadinloveas:asadinloveas@cluster0.afg8tut.mongodb.net/?retryWrites=true&w=majority"
+    EVENT_LOGS = (-1002094142057)  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
+    MONGO_DB_URI= "mongodb+srv://JARVISV1:JARVIS85@mrxbroken.okisnjg.mongodb.net/?retryWrites=true&w=majority&appName=MRXBROKEN"
     # RECOMMENDED
     DATABASE_URL = ""  # A sql database url from elephantsql.com
     CASH_API_KEY = (
